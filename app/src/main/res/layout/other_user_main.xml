@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".streaming_main.OtherUserMain">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/user_main_appBarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            app:contentScrim="@color/toysFirstColor"
+            app:expandedTitleMarginEnd="100dp"
+            app:expandedTitleMarginStart="60dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/set_user_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/toysSecondColor" />
+
+            <RelativeLayout
+                android:layout_marginTop="80dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/otherUser_pro"
+                    android:onClick="otherUser_click"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="50dp"
+                    android:src="@drawable/usershape"
+                    app:layout_collapseMode="parallax"/>
+
+                <TextView
+                    android:id="@+id/otherUser_Id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User E-mail"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textColor="@android:color/white"
+                    android:layout_toRightOf="@id/otherUser_pro"
+                    android:layout_alignBottom="@id/otherUser_pro"
+                    android:layout_marginLeft="30dp"/>
+
+                <LinearLayout
+                    android:id="@+id/timeline_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_above="@id/otherUser_Id"
+                    android:layout_toRightOf="@id/otherUser_pro"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="25dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/timeline_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="3dp"/>
+
+                    <TextView
+                        android:id="@+id/timeline_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="게시물"
+                        android:textSize="8dp"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/follow_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_toRightOf="@id/otherUser_pro"
+                    android:layout_marginLeft="100dp"
+                    android:layout_above="@id/otherUser_Id"
+                    android:layout_marginBottom="25dp">
+
+                    <TextView
+                        android:id="@+id/follow_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="97"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="3dp"/>
+
+                    <TextView
+                        android:id="@+id/follow_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="팔로워"
+                        android:textSize="8dp"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/following_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/otherUser_pro"
+                    android:layout_marginLeft="165dp"
+                    android:layout_above="@id/otherUser_Id"
+                    android:layout_marginBottom="25dp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/following_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="81"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="3dp"/>
+
+                    <TextView
+                        android:id="@+id/following_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="팔로잉"
+                        android:textColor="@android:color/white"
+                        android:textSize="8dp"/>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/setAlert_btn"
+                    android:onClick="otherUser_click"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/otherUser_Id"
+                    android:layout_alignBottom="@id/otherUser_Id"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/ic_add_user"
+                    android:background="@null"/>
+
+            </RelativeLayout>
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/closeActivityBtn"
+                        android:onClick="otherUser_click"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_close_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/timeline_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="동영상"
+                android:textStyle="bold"
+                android:textColor="@color/toysSecondColor"
+                android:background="@color/toysFirstColor"
+                android:gravity="center_horizontal"
+                android:padding="13dp"/>
+
+            <!-- 다른 사용자의 VOD 영상 RecyclerView !-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/otherUser_vod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/timeline_title"
+                android:padding="5dp"
+                android:layout_marginTop="10dp">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toysSecondColor"
+    tools:context="com.example.hyunjujung.tbox.login_join_activity.ToysLogin">
+
+    <ImageView
+        android:id="@+id/ToysIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_robot"/>
+
+    <TextView
+        android:id="@+id/ToysTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ToysIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="TBOX"
+        android:textColor="#FEB729"
+        android:textStyle="bold"
+        android:textSize="37dp"/>
+
+    <!-- 로그인을 위한 이메일, 비밀번호 입력부분 !-->
+    <LinearLayout
+        android:id="@+id/login_linear1"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ToysTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_mailicon"
+            android:baselineAlignBottom="false"/>
+
+        <EditText
+            android:id="@+id/login_email_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="E-mail"
+            android:textColor="@color/toysThirdColor"
+            android:textColorHint="@color/toysThirdColor"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:layout_marginLeft="15dp"
+            android:textSize="16dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+    <View
+        android:id="@+id/email_blow_view"
+        android:layout_width="250dp"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/login_linear1"
+        android:background="@color/toysThirdColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+    <LinearLayout
+        android:id="@+id/login_linear2"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email_blow_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_passwordicon"
+            android:baselineAlignBottom="false"/>
+
+        <EditText
+            android:id="@+id/login_password_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="PassWord"
+            android:textColor="@color/toysThirdColor"
+            android:textColorHint="@color/toysThirdColor"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:layout_marginLeft="15dp"
+            android:textSize="16dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+    <View
+        android:id="@+id/email_blow_view2"
+        android:layout_width="250dp"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/login_linear2"
+        android:background="@color/toysThirdColor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- 로그인 버튼 & 회원가입 버튼 !-->
+    <Button
+        android:id="@+id/login_ok_btn"
+        android:onClick="login_onclick"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/email_blow_view2"
+        android:layout_centerHorizontal="true"
+        android:text="SIGN IN"
+        android:textColor="@color/toysFirstColor"
+        android:background="@drawable/login_btn_circle"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/go_join_btn"
+        android:onClick="login_onclick"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:text="아직 회원이 아니신가요?"
+        android:textSize="13dp"
+        android:background="@color/toysSecondColor"
+        android:layout_below="@id/login_ok_btn"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/toysThirdColor"
+        android:layout_marginTop="5dp"/>
+
+</RelativeLayout>

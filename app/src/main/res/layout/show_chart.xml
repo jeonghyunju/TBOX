@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".streaming_main.ShowChart">
+
+    <RelativeLayout
+        android:id="@+id/date_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toysSecondColor"
+        android:onClick="chartClick">
+
+        <RelativeLayout
+            android:id="@+id/dayTitleRel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/dayTitle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dayTitle"
+                android:textColor="@color/toysFirstColor"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:id="@+id/date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:textSize="35dp"
+                android:textColor="@color/toysFirstColor"
+                android:textAlignment="center"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/year_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018"
+            android:textColor="@android:color/white"
+            android:layout_toRightOf="@id/dayTitleRel"
+            android:layout_alignBaseline="@id/dayTitleRel"/>
+        <TextView
+            android:id="@+id/month_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06"
+            android:textColor="@android:color/white"
+            android:layout_toRightOf="@id/dayTitleRel"
+            android:layout_above="@id/year_tv"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/closeChartBtn"
+        android:onClick="chartClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_close_black"
+        android:padding="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/date_rel">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/chartView1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/toysSecondColor"/>
+
+            <RelativeLayout
+                android:id="@+id/totalRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/chartView1">
+
+                <TextView
+                    android:id="@+id/dayTotalCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,880"
+                    android:textSize="25dp"
+                    android:textColor="@color/toysSecondColor"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:layout_toRightOf="@id/dayTotalCount"
+                    android:layout_alignBaseline="@id/dayTotalCount"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/chartView2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/totalRelative"
+                android:layout_marginTop="10dp"
+                android:background="@color/toysThirdColor"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/genderChartLinear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/chartView2"
+                android:gravity="center_vertical"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_femalenmale"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/genderTitle"
+                    android:textColor="@color/toysSecondColor"
+                    android:layout_marginEnd="30dp" />
+
+            </LinearLayout>
+
+            <lecho.lib.hellocharts.view.PieChartView
+                android:id="@+id/pieChart"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/genderChartLinear"
+                android:layout_centerHorizontal="true"/>
+
+            <View
+                android:id="@+id/chartView3"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/pieChart"
+                android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/dayChartLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/chartView3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_daychart"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dayChart"
+                    android:textColor="@color/toysSecondColor"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <lecho.lib.hellocharts.view.ColumnChartView
+                android:id="@+id/dayColumnChart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/dayChartLinear"
+                android:padding="10dp" />
+
+            <LinearLayout
+                android:id="@+id/monthLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/dayColumnChart"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_monthchart"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/monthlyChart"
+                    android:textColor="@color/toysSecondColor"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/monthChart_linear"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                android:layout_below="@id/monthLinear"
+                android:layout_marginBottom="20dp"
+                android:padding="5dp">
+
+                <lecho.lib.hellocharts.view.ColumnChartView
+                    android:id="@+id/monthChartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <lecho.lib.hellocharts.view.PreviewColumnChartView
+                    android:id="@+id/monthChart_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

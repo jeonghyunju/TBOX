@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="settingClick"
+            type="com.example.hyunjujung.tbox.fragment.FragSettings_main.SettingClickEvent"/>
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/toysSeventhColor">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/setting_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/toolbar_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bottom_navi_setting"
+                android:textColor="@color/toysSecondColor"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginEnd="13dp"/>
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:id="@+id/settingScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/setting_toolbar">
+
+            <RelativeLayout
+                android:id="@+id/wholeRelative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/setting_toolbar"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="50dp">
+
+                <!-- 내 계정 !-->
+                <LinearLayout
+                    android:id="@+id/accountTitle_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_person"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/myAccount"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/account_rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_circle"
+                    android:layout_below="@id/accountTitle_linear"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/logout_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logout"
+                        android:layout_marginStart="30dp"
+                        android:padding="10dp"
+                        android:onClick="@{settingClick::onClickAccount}"/>
+
+                    <View
+                        android:id="@+id/account_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@id/logout_tv"
+                        android:background="@color/toysSeventhColor"/>
+
+                    <TextView
+                        android:id="@+id/change_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/logout_tv"
+                        android:padding="10dp"
+                        android:text="@string/changeInfo"
+                        android:layout_marginStart="30dp"
+                        android:onClick="@{settingClick::onClickAccount}"/>
+
+                    <ImageView
+                        android:id="@+id/goChange_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_below="@id/logout_tv"
+                        app:srcCompat="@drawable/ic_chevron_right"
+                        android:padding="7dp"/>
+
+                    <View
+                        android:id="@+id/account_view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@id/change_tv"
+                        android:background="@color/toysSeventhColor"/>
+
+                    <!-- 모바일 이더리움 지갑 !-->
+                    <RelativeLayout
+                        android:id="@+id/mobileWalletRel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/account_view2"
+                        android:onClick="@{settingClick::onClickAccount}">
+
+                        <TextView
+                            android:id="@+id/mobileWallet_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="@string/mobileWallet"
+                            android:layout_marginStart="30dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/walletScript"
+                            android:textSize="10dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_toEndOf="@id/mobileWallet_tv"
+                            android:layout_alignBaseline="@id/mobileWallet_tv"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/goMobileWallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_chevron_right"
+                            android:padding="7dp"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!-- 방송 알림 설정 !-->
+                <LinearLayout
+                    android:id="@+id/alertTitle_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/account_rel"
+                    android:padding="8dp"
+                    android:layout_marginTop="25dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_alarm_black"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alert"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/alert_rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_circle"
+                    android:layout_below="@id/alertTitle_linear"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/alert_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/broadcat_alert"
+                        android:layout_marginStart="30dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/alert_descript"
+                        android:textSize="10dp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_toEndOf="@id/alert_tv"
+                        android:layout_alignBaseline="@id/alert_tv"
+                        android:layout_marginStart="10dp"/>
+
+                    <Switch
+                        android:id="@+id/alert_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:padding="7dp"
+                        android:checked="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"/>
+                </RelativeLayout>
+
+                <!-- 통계 !-->
+                <LinearLayout
+                    android:id="@+id/chartTitle_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/alert_rel"
+                    android:padding="8dp"
+                    android:layout_marginTop="25dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_barchart"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chart"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/chart_rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_circle"
+                    android:layout_below="@id/chartTitle_linear"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:onClick="@{settingClick::onClickChart}">
+
+                    <TextView
+                        android:id="@+id/chart_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monthChart"
+                        android:layout_marginStart="30dp"
+                        android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chart_descript"
+                        android:textSize="10dp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_toEndOf="@id/chart_tv"
+                        android:layout_alignBaseline="@id/chart_tv"
+                        android:layout_marginStart="10dp"/>
+
+                    <ImageView
+                        android:id="@+id/goChart_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        app:srcCompat="@drawable/ic_chevron_right"
+                        android:padding="7dp"/>
+                </RelativeLayout>
+
+                <!-- Tmap 이용한 경로 찾기 !-->
+                <LinearLayout
+                    android:id="@+id/mapTitleLinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/chart_rel"
+                    android:padding="8dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_placeholder"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/place"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/map_rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_circle"
+                    android:layout_below="@id/mapTitleLinear"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp">
+
+                    <RelativeLayout
+                        android:id="@+id/tmap_relative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{settingClick::onClickMap}">
+                        <TextView
+                            android:id="@+id/tmap_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tmap"
+                            android:layout_marginStart="30dp"
+                            android:padding="10dp" />
+
+                        <TextView
+                            android:id="@+id/tmap_descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tmap_descript"
+                            android:textSize="10dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_toEndOf="@id/tmap_tv"
+                            android:layout_alignBaseline="@id/tmap_tv"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_chevron_right"
+                            android:padding="7dp"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- 카메라 !-->
+                <LinearLayout
+                    android:id="@+id/camera_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/map_rel"
+                    android:padding="8dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_camera_alt_black_24dp"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cameraTitle"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/camera_rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/camera_linear"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/setting_circle">
+
+                    <RelativeLayout
+                        android:id="@+id/faceDetection_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{settingClick::onClickCamera}">
+
+                        <TextView
+                            android:id="@+id/faceDetection_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:padding="10dp"
+                            android:text="@string/faceDetection_title" />
+
+                        <TextView
+                            android:id="@+id/faceDetection_descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/faceDetection_descript"
+                            android:textSize="10dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_toEndOf="@id/faceDetection_tv"
+                            android:layout_alignBaseline="@id/faceDetection_tv"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/ic_chevron_right"
+                            android:padding="7dp"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <!-- AR 체험하기 !-->
+                <LinearLayout
+                    android:id="@+id/arExperience_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/camera_rel"
+                    android:padding="8dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_ar_vision"
+                        android:layout_marginStart="15dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/arExperienceTitle"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="5dp"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/arExperience_rel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arExperience_linear"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/setting_circle">
+
+                    <RelativeLayout
+                        android:id="@+id/drawingLine_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{settingClick::onClickArExperience}">
+
+                        <TextView
+                            android:id="@+id/drawingLine_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:padding="10dp"
+                            android:text="@string/drawingLine" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:padding="9dp"
+                            app:srcCompat="@drawable/ic_drawing_line" />
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/ar_view1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@id/drawingLine_rel"
+                        android:background="@color/toysSeventhColor"/>
+
+                    <RelativeLayout
+                        android:id="@+id/arPortal_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ar_view1"
+                        android:onClick="@{settingClick::onClickArExperience}">
+
+                        <TextView
+                            android:id="@+id/arPortal_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/arPortalTitle"
+                            android:layout_marginStart="30dp"
+                            android:padding="10dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="5dp"
+                            android:padding="9dp"
+                            app:srcCompat="@drawable/ic_blackhole"/>
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/ar_view2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@id/arPortal_rel"
+                        android:background="@color/toysSeventhColor"/>
+
+                    <RelativeLayout
+                        android:id="@+id/runPengu_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ar_view2"
+                        android:onClick="@{settingClick::onClickArExperience}">
+
+                        <TextView
+                            android:id="@+id/runPengu_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/runPenguTitle"
+                            android:layout_marginStart="30dp"
+                            android:padding="10dp"/>
+
+                        <TextView
+                            android:id="@+id/runPengu_descript"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/runPengu_descript"
+                            android:textSize="10dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_toEndOf="@id/runPengu_tv"
+                            android:layout_alignBaseline="@id/runPengu_tv"
+                            android:layout_marginStart="10dp"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="5dp"
+                            android:layout_centerVertical="true"
+                            android:padding="8dp"
+                            app:srcCompat="@drawable/ic_penguin"/>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/bottom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/arExperience_rel"
+                    android:layout_marginBottom="40dp"/>
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

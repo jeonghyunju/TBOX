@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background"
+        tools:context="com.example.hyunjujung.tbox.streaming_main.broadcast.LiveStreamSetting">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="라이브 설정"
+            android:textStyle="bold"
+            android:textSize="19dp"
+            android:textColor="@color/gradientTextColor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+
+        <ImageView
+            android:id="@+id/cancel_setting"
+            android:onClick="startLive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_close_black"
+            android:padding="10dp"
+            android:layout_marginTop="7dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TITLE"
+                android:textStyle="bold"
+                android:textColor="@color/gradientTextColor"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/livestream_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="13"
+                android:background="@drawable/livestream_setting_circle"
+                android:padding="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"/>
+
+            <RadioGroup
+                android:id="@+id/livestream_RG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <RadioButton
+                    android:id="@+id/livesteam_open"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="공개"
+                    android:textColor="@color/gradientTextColor"
+                    android:layout_marginRight="10dp"/>
+
+                <RadioButton
+                    android:id="@+id/livesteam_noOpen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="비공개"
+                    android:textColor="@color/gradientTextColor"
+                    android:layout_marginLeft="10dp"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/startLive_Btn"
+            android:onClick="startLive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_livesetdone"
+            android:background="@null" />
+
+    </RelativeLayout>
+</layout>

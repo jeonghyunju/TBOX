@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AR.drawLine.AR_DrawingLine">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <LinearLayout
+        android:id="@+id/ARbottom_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="6">
+
+        <ImageButton
+            android:id="@+id/exitActivity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_close_black"
+            android:background="@null"
+            android:padding="20dp"
+            android:onClick="onclickAR"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/settings_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_settings_black_24dp"
+            android:padding="20dp"
+            android:onClick="onclickAR"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/record_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_livestart"
+            android:padding="10dp"
+            android:onClick="onclickAR"
+            android:layout_weight="2"/>
+
+        <ImageButton
+            android:id="@+id/return_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_return_arrow"
+            android:padding="20dp"
+            android:onClick="onclickAR"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/deleteAll_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_delete_all"
+            android:padding="20dp"
+            android:onClick="onclickAR"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settingUI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/gradientPathType"
+        android:padding="10dp">
+
+        <Switch
+            android:id="@+id/debugView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:checked="false"
+            android:onClick="onClickDebug"
+            android:text="@string/Drawing_plane"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            tools:checked="false"/>
+
+        <TextView
+            android:id="@+id/lineWidth_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LineWidth"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+        <SeekBar
+            android:id="@+id/lineWidthBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:max="100"
+            android:progress="50"/>
+
+        <TextView
+            android:id="@+id/distance_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/DistanceScale"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+        <SeekBar
+            android:id="@+id/distanceBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:max="100"
+            android:progress="50"/>
+
+        <TextView
+            android:id="@+id/smoothing_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Smoothing"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+        <SeekBar
+            android:id="@+id/smoothingBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:max="100"
+            android:progress="50"/>
+
+        <TextView
+            android:id="@+id/color_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/LineColors"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|center">
+
+            <ImageView
+                android:id="@+id/colorWhite"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineWhite"
+                android:onClick="changeLineColor" />
+
+            <ImageView
+                android:id="@+id/colorBlack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor" />
+
+            <ImageView
+                android:id="@+id/colorGray"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineGray"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+
+            <ImageView
+                android:id="@+id/colorBrown"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineBrown"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+
+            <ImageView
+                android:id="@+id/colorBlue"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineBlue"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+
+            <ImageView
+                android:id="@+id/colorCyan"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineCyan"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+
+            <ImageView
+                android:id="@+id/colorGreen"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineGreen"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+
+            <ImageView
+                android:id="@+id/colorOrange"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineOrange"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+
+            <ImageView
+                android:id="@+id/colorMagenta"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/drawing_line_color"
+                android:backgroundTint="@color/lineMagenta"
+                android:layout_marginStart="7dp"
+                android:onClick="changeLineColor"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

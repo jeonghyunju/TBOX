@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".streaming_main.camera.faceDetect.FaceDetectActivity">
+
+    <FrameLayout
+        android:id="@+id/cameraFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.example.hyunjujung.tbox.streaming_main.camera.faceDetect.CameraPreview
+            android:id="@+id/cameraPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.hyunjujung.tbox.streaming_main.camera.faceDetect.GraphicOverlay
+                android:id="@+id/graphicOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.example.hyunjujung.tbox.streaming_main.camera.faceDetect.CameraPreview>
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/switchCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_rotate"
+        android:tint="@android:color/white"
+        android:background="@null"
+        android:padding="10dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:onClick="faceDetectOnclick"/>
+
+    <ImageButton
+        android:id="@+id/exitActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_close_black"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginTop="9dp"
+        android:onClick="faceDetectOnclick"/>
+
+    <RelativeLayout
+        android:id="@+id/bottomBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/takePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_livestart"
+            android:background="@null"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:onClick="faceDetectOnclick"/>
+
+        <ImageButton
+            android:id="@+id/selectEmoticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_set_emoticon"
+            android:tint="@android:color/white"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:layout_alignBaseline="@id/takePicture"
+            android:onClick="faceDetectOnclick"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/emoticonRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/takePicture"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="3dp"
+            android:background="@color/gradientBoxColor"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:visibility="gone">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+</RelativeLayout>

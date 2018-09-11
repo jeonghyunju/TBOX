@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "495937413629",
+    "firebase_url": "https://tbox-project.firebaseio.com",
+    "project_id": "tbox-project",
+    "storage_bucket": "tbox-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495937413629:android:827155289377581d",
+        "android_client_info": {
+          "package_name": "com.example.hyunjujung.tbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495937413629-4a5dtg7ku71i7flk8bjqig7c25uadrev.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "495937413629-4a5dtg7ku71i7flk8bjqig7c25uadrev.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxI9MADc6YvCNTL8lTjiJmVOrAyX6rK4A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hyunjujung.tbox.login_join_activity.Join">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/join_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toysSecondColor">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 회원가입 취소하고 뒤로가기 버튼 !-->
+            <ImageButton
+                android:id="@+id/join_toolbar_back_btn"
+                android:onClick="join_onclick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_left_arrow"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/join_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="JOIN"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_below="@id/join_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/join_user_profile"
+            android:onClick="join_onclick"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ic_camera"/>
+
+        <ImageButton
+            android:id="@+id/join_profile_filter"
+            android:onClick="join_onclick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_plus"
+            android:background="@null"
+            android:layout_alignEnd="@id/join_user_profile"
+            android:layout_alignBottom="@id/join_user_profile"/>
+        
+        <EditText
+            android:id="@+id/join_user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/join_user_profile"
+            android:layout_marginTop="35dp"
+            android:layout_centerHorizontal="true"
+            android:ems="13"
+            android:maxLines="1"
+            android:hint="User Email"
+            android:textSize="15dp"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/join_user_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/join_user_email"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:ems="13"
+            android:maxLines="1"
+            android:hint="User Password"
+            android:textSize="15dp"
+            android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/join_user_confirmPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/join_user_password"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:ems="13"
+            android:maxLines="1"
+            android:hint="Confirm Password"
+            android:textSize="15dp"
+            android:inputType="textPassword"/>
+
+        <RadioGroup
+            android:id="@+id/join_user_radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/join_user_confirmPW"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/join_female_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Female"
+                android:layout_marginRight="30dp"/>
+            <RadioButton
+                android:id="@+id/join_male_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/join_age_linear"
+            android:layout_width="230dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/join_user_radiogroup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/join_age_circle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="연령대"
+                android:layout_marginLeft="15dp"/>
+
+            <Spinner
+                android:id="@+id/join_age_spinner"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+            </Spinner>
+
+        </LinearLayout>
+
+        <!-- 회원가입 버튼 !-->
+        <Button
+            android:id="@+id/join_done_btn"
+            android:onClick="join_onclick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="회원가입"
+            android:textStyle="bold"
+            android:textColor="@color/toysSecondColor"
+            android:background="@color/toysFirstColor"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

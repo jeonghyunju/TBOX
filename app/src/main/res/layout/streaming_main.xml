@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hyunjujung.tbox.streaming_main.Streaming_main">
+
+    <!--<android.support.design.widget.BottomNavigationView
+        android:id="@+id/streamMain_bottomNavi"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/toysFirstColor"
+        app:itemIconTint="@drawable/bottom_navi_click_color"
+        app:itemTextColor="@drawable/bottom_navi_click_color"
+        app:menu="@menu/bottom_navigation_item">
+    </android.support.design.widget.BottomNavigationView>!-->
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+        android:id="@+id/streamMain_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:selectedBackgroundVisible="false">
+    </com.aurelhubert.ahbottomnavigation.AHBottomNavigation>
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager
+        android:id="@+id/streamMain_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/streamMain_bottom">
+    </com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager>
+
+</RelativeLayout>

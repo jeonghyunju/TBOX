@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:showIn="@layout/fraguser_main">
+
+        <LinearLayout
+            android:id="@+id/scrollview_linear"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp">
+
+            <Button
+                android:id="@+id/liveStream_startBtn"
+                android:onClick="go_live_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="라이브 방송"
+                android:drawableLeft="@drawable/webcam"
+                android:padding="10dp"
+                android:drawablePadding="5dp"
+                android:background="@drawable/livestream_btn_circle"
+                android:paddingLeft="30dp"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/user_main_view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/scrollview_linear"
+            android:layout_marginTop="10dp"
+            android:background="@color/toysThirdColor"/>
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

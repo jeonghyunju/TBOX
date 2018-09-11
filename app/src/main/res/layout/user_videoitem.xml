@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/myVideo_thumb"
+                android:layout_width="90dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"/>
+
+            <ImageView
+                android:id="@+id/public_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_visibility"
+                android:layout_alignParentRight="true"
+                android:padding="3dp"
+                android:layout_marginTop="5dp"
+                android:visibility="visible"
+                android:layout_marginRight="5dp"/>
+
+            <TextView
+                android:id="@+id/videoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/myVideo_thumb"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Video Title"
+                android:textStyle="bold"
+                android:textColor="@color/toysSecondColor"/>
+
+            <TextView
+                android:id="@+id/videoHostId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/myVideo_thumb"
+                android:layout_below="@id/videoTitle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6dp"
+                android:text="Host Email"
+                android:textSize="10dp"/>
+
+            <TextView
+                android:id="@+id/progressTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4시간전"
+                android:layout_marginBottom="5dp"
+                android:textSize="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@id/myVideo_thumb"
+                android:layout_marginRight="20dp"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

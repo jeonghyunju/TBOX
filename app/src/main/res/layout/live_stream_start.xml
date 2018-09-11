@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/liveStart_Relative"
+    tools:context="com.example.hyunjujung.tbox.streaming_main.broadcast.LiveStreamStart">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/live_surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/start_camera"
+        android:onClick="startCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        app:srcCompat="@drawable/ic_livestart"
+        android:tint="@color/toysFirstColor"
+        android:background="@null" />
+
+    <ImageButton
+        android:id="@+id/switch_camera"
+        android:onClick="startCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_rotate"
+        android:tint="@color/toysFirstColor"
+        android:padding="15dp"
+        android:background="@null"/>
+
+    <RelativeLayout
+        android:id="@+id/writeChat_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/start_camera"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/writeChat_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="message..."
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gradientTextColor"/>
+
+        <ImageButton
+            android:id="@+id/chatSend_btn"
+            android:onClick="chatSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/writeChat_et"
+            app:srcCompat="@drawable/ic_sendbutton"
+            android:background="@null"
+            android:padding="7dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chat_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/writeChat_linear"
+        android:padding="5dp">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

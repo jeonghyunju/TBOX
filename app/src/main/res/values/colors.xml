@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="toysFirstColor">#FEB729</color>
+    <color name="toysSecondColor">#00275E</color>
+    <color name="toysThirdColor">#6D98AB</color>
+    <color name="toysForthColor">#FEE9BE</color>
+    <color name="toysFifthColor">#FF3B1D</color>
+    <color name="toysSixthColor">#848383</color>
+    <color name="toysSeventhColor">#456D98AB</color>
+    <color name="gradientTextColor">#99ffffff</color>
+    <color name="gradientBoxColor">#45ffffff</color>
+    <color name="gradientSearchColor">#CCffffff</color>
+    <color name="gradientPathType">#99FEB729</color>
+    <color name="thumbnailback">@android:color/darker_gray</color>
+    <color name="startMarker">#00A03E</color>
+
+    <!-- AR - DrawingLine Color !-->
+    <color name="lineWhite">#ffffff</color>
+    <color name="lineBlack">#000000</color>
+    <color name="lineGray">#8b8c91</color>
+    <color name="lineBrown">#8B4513</color>
+    <color name="lineBlue">#0000ff</color>
+    <color name="lineCyan">#00ffff</color>
+    <color name="lineGreen">#00ff00</color>
+    <color name="lineOrange">#fc8200</color>
+    <color name="lineMagenta">#ff0090</color>
+
+    <array name="bottom_navi_colors">
+        <item name="bottom_home_color">#FEB729</item>
+        <item name="bottom_user_color">#FEB729</item>
+        <item name="bottom_setting_color">#FEB729</item>
+    </array>
+</resources>

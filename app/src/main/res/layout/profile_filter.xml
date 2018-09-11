@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login_join_activity.ProfileFilter">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/filter_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toysSecondColor">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 필터 설정 취소하고 뒤로가기 !-->
+            <ImageButton
+                android:id="@+id/filter_back"
+                android:onClick="filter_onclick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_left_arrow"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/set_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="프로필 설정"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@android:color/white"
+                android:layout_centerInParent="true"/>
+
+            <ImageButton
+                android:id="@+id/filter_done"
+                android:onClick="filter_onclick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_done"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:layout_marginRight="17dp"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/change_filter"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/filter_toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"/>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/change_filter"
+        android:background="@color/toysThirdColor"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/filter_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view1"
+        android:padding="14dp"
+        android:layout_marginBottom="15dp"
+        android:text="FILTER"
+        android:gravity="center"/>
+
+    <GridLayout
+        android:columnCount="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/filter_title"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/original_image"
+            android:onClick="changeImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/gray_filter"
+            android:onClick="changeImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/sketch_filter"
+            android:onClick="changeImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/reverse_filter"
+            android:onClick="changeImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Original"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:padding="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gray"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:padding="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sketch"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reverse"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:layout_gravity="center"/>
+
+    </GridLayout>
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/addressIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_location_on_black"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:id="@+id/addressName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/addressIv"
+        android:layout_marginStart="10dp"
+        android:text="논현역"
+        android:layout_alignBaseline="@id/addressIv"/>
+
+    <TextView
+        android:id="@+id/addressRoadName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="4dp"
+        android:text="서울 강남구 강남대로"
+        android:textSize="12dp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@id/addressName" />
+
+    <TextView
+        android:id="@+id/addressDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="658m"
+        android:textSize="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="5dp" />
+</RelativeLayout>

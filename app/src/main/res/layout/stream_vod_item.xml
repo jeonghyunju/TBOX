@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 스트리밍 메인 화면의 VOD RecyclerView 아이템 layout !-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        app:contentPadding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/thumb_rel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/vod_thumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/vod_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vod_tag_circle"
+                android:text="VOD"
+                android:textStyle="bold"
+                android:textSize="11dp"
+                android:textColor="@android:color/white"
+                android:padding="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <ImageView
+                android:id="@+id/invisible_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:layout_marginStart="3dp"
+                app:srcCompat="@drawable/ic_visibility_off"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/vodHost_profile"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/thumb_rel"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/vod_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/vodHost_profile"
+                android:layout_below="@id/thumb_rel"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:text="VOD TITLE"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:id="@+id/vodHost_ID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/vodHost_profile"
+                android:layout_below="@id/vod_title"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="VOD Host User Email"
+                android:textSize="11dp"/>
+
+            <ImageButton
+                android:id="@+id/vodAdd_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_add_black_24dp"
+                android:background="@null"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

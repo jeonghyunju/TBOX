@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context="com.example.hyunjujung.tbox.fragment.FragStream_main">
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/streamMain_Toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/title_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_youtube"
+                                android:layout_centerVertical="true"/>
+
+                            <TextView
+                                android:id="@+id/title_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="라이브 방송"
+                                android:textStyle="bold"
+                                android:textColor="@color/toysSecondColor"
+                                android:textSize="18dp"
+                                android:layout_toRightOf="@id/title_image"
+                                android:layout_marginLeft="10dp"
+                                android:layout_centerVertical="true"/>
+
+                            <ImageButton
+                                android:id="@+id/searching_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                app:srcCompat="@drawable/ic_search"
+                                android:background="@null"
+                                android:layout_marginRight="15dp"
+                                android:layout_centerVertical="true"/>
+
+                            <EditText
+                                android:id="@+id/search_et"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="17"
+                                android:maxLines="1"
+                                android:visibility="invisible"
+                                android:hint="검색"
+                                android:textSize="15dp"/>
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.Toolbar>
+
+                    <View
+                        android:id="@+id/stream_main_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/toysThirdColor"
+                        android:layout_below="@id/streamMain_Toolbar"/>
+
+                    <RelativeLayout
+                        android:id="@+id/stream_top_rel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/stream_main_view"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/livestream_btn_circle"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp">
+
+                        <LinearLayout
+                            android:id="@+id/stream_top_linear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp">
+
+                            <ImageView
+                                android:id="@+id/stream_top_iv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/ic_fire"
+                                android:layout_marginLeft="30dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="실시간 급상승"
+                                android:textStyle="bold"
+                                android:layout_toRightOf="@id/stream_top_iv"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="6dp"/>
+
+                        </LinearLayout>
+
+                        <!-- 실시간 급상승 RecyclerView !-->
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/stream_top_Recycle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/stream_top_linear"
+                            android:padding="15dp"
+                            android:orientation="horizontal"
+                            app:layoutManager="android.support.v7.widget.LinearLayoutManager">
+                        </android.support.v7.widget.RecyclerView>
+
+                        <TextView
+                            android:id="@+id/no_streamTop"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/stream_top_linear"
+                            android:padding="15dp"
+                            android:text="목록이 없습니다"
+                            android:textAlignment="center"/>
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/stream_live_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_radio"
+                        android:layout_below="@id/stream_top_rel"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="17dp"
+                        android:padding="1dp"/>
+
+                    <TextView
+                        android:id="@+id/stream_live_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LIVE"
+                        android:textStyle="bold"
+                        android:layout_below="@id/stream_top_rel"
+                        android:layout_toRightOf="@id/stream_live_iv"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="7dp"/>
+
+                    <!-- 실시간 라이브 방송 목록 RecyclerView !-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/stream_live_Recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/stream_live_tv"
+                        android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="15dp">
+                    </android.support.v7.widget.RecyclerView>
+
+                    <TextView
+                        android:id="@+id/no_broadcast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="현재 생방송이 없습니다"
+                        android:textAlignment="center"
+                        android:padding="18dp"
+                        android:layout_below="@id/stream_live_tv" />
+
+                    <ImageView
+                        android:id="@+id/vod_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_vod"
+                        android:layout_below="@id/stream_live_Recycle"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="17dp"
+                        android:padding="1dp"/>
+
+                    <TextView
+                        android:id="@+id/vod_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VOD"
+                        android:textStyle="bold"
+                        android:layout_toRightOf="@id/vod_iv"
+                        android:layout_below="@id/stream_live_Recycle"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="7dp"/>
+
+                    <!-- VOD 목록 RecyclerView !-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/vod_Recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/vod_tv"
+                        android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="3dp">
+                    </android.support.v7.widget.RecyclerView>
+
+                </RelativeLayout>
+
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</layout>

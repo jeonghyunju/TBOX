@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="3dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"/>
+
+    <TextView
+        android:id="@+id/chat_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/chat_profile"
+        android:layout_centerVertical="true"
+        android:text="오후 4:15"
+        android:textSize="11dp"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"/>
+
+    <TextView
+        android:id="@+id/chat_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/chat_time"
+        android:layout_marginRight="7dp"
+        android:layout_centerVertical="true"
+        android:text="User Email"
+        android:textSize="15dp"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/chat_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/chat_ID"
+        android:layout_centerVertical="true"
+        android:text="Chatting Message"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+</RelativeLayout>

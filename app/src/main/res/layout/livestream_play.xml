@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".streaming_main.broadcast.LivestreamPlay">
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/livestream_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="fill"
+        app:surface_type="texture_view">
+    </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+    <LinearLayout
+        android:id="@+id/livePlay_linear"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/live_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_radio"
+            android:tint="@android:color/white"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/live_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIVE"
+            android:textColor="@android:color/white"
+            android:layout_toRightOf="@id/live_image"
+            android:textSize="12dp"
+            android:layout_marginLeft="5dp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/playChat_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/playChat_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:hint="message..."
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/gradientTextColor"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/chatSend_btn"
+            android:onClick="chatSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/playChat_write"
+            app:srcCompat="@drawable/ic_sendbutton"
+            android:background="@null"
+            android:padding="7dp"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/liveChat_R"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/playChat_rel"
+        android:padding="5dp">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

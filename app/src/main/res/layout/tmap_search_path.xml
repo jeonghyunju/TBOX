@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".streaming_main.map.TmapSearchPath">
+
+    <RelativeLayout
+        android:id="@+id/tmapLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mapSearch_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/map_search_circle">
+
+        <EditText
+            android:id="@+id/mapSearchEt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="16"
+            android:background="@null"
+            android:layout_marginStart="8dp"
+            android:padding="3dp"
+            android:hint="@string/mapSearchHint"/>
+
+        <ImageView
+            android:id="@+id/mapSearchIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_mapsearch"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:onClick="searchMap" />
+
+        <View
+            android:id="@+id/mapView1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/mapSearchEt"
+            android:layout_marginTop="8dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/searchDateRecycle"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/mapView1"
+            android:padding="3dp"
+            android:visibility="gone">
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/start_endPath_linear"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/mapSearch_rel">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/map_search_circle"
+            android:weightSum="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:srcCompat="@drawable/ic_start_path"/>
+
+            <EditText
+                android:id="@+id/startPath_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/startSetText"
+                android:textSize="13dp"
+                android:padding="10dp"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:enabled="false" />
+
+            <ImageView
+                android:id="@+id/initial_startPath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="searchMap"
+                app:srcCompat="@drawable/ic_clear_black"
+                android:layout_gravity="end"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/map_search_circle"
+            android:weightSum="1"
+            android:gravity="center_vertical"
+            android:layout_marginTop="3dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:srcCompat="@drawable/ic_end_path"/>
+
+            <EditText
+                android:id="@+id/endPath_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/endSetText"
+                android:textSize="13dp"
+                android:padding="10dp"
+                android:layout_marginStart="7dp"
+                android:background="@null"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/areaBottom_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/areaName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="논현역"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/toysSecondColor"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/areaDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/areaName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
+            android:text="5km"
+            android:textColor="@color/toysSecondColor"/>
+
+        <TextView
+            android:id="@+id/areaBizName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="영화관"
+            android:textColor="@android:color/darker_gray"
+            android:layout_toRightOf="@id/areaDistance"
+            android:layout_alignBaseline="@id/areaDistance"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/areaAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/areaDistance"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
+            android:text="서울시 강남구 역삼동"/>
+
+        <View
+            android:id="@+id/areaView1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/toysThirdColor"
+            android:layout_below="@id/areaAddress"
+            android:layout_marginTop="13dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/areaView1"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:layout_marginTop="3dp">
+
+            <Button
+                android:id="@+id/setStart_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/startSet"
+                android:background="@drawable/join_age_circle"
+                android:onClick="searchMap"/>
+
+            <Button
+                android:id="@+id/setEnd_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/endSet"
+                android:textColor="@android:color/white"
+                android:background="@drawable/ares_set_circle"
+                android:onClick="searchMap"
+                android:layout_marginStart="7dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/areaBotton_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="3dp"
+            android:onClick="searchMap"
+            app:srcCompat="@drawable/ic_clear_black"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/carType_rel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/map_search_circle"
+        android:layout_above="@id/areaBottom_rel"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
+        android:onClick="searchMap">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_directions_car"
+            android:padding="5dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/walkTyep_rel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/carType_rel"
+        android:background="@drawable/map_search_circle"
+        android:layout_marginStart="20dp"
+        android:onClick="searchMap">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_directions_walk"
+            android:padding="5dp"/>
+    </RelativeLayout>
+</RelativeLayout>
